@@ -32,14 +32,3 @@ app.include_router(dashboard.router)
 @app.get("/")
 async def root():
     return {"message": "Welcome to Fintrack API"}
-
-from fastapi import Request
-from fastapi.responses import JSONResponse
-
-@app.exception_handler(Exception)
-async def debug_exception_handler(request: Request, exc: Exception):
-    import traceback
-    return JSONResponse(
-        status_code=500,
-        content={"message": "Internal Server Error", "detail": str(exc), "traceback": traceback.format_exc()},
-    )
