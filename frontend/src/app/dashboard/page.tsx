@@ -40,7 +40,7 @@ export default function DashboardPage() {
 
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <FadeIn delay={0.1}>
-                    <Card>
+                    <Card className="transition-all hover:shadow-lg hover:-translate-y-1">
                         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                             <CardTitle className="text-sm font-medium">Total Income</CardTitle>
                             <TrendingUp className="h-4 w-4 text-green-500" />
@@ -51,7 +51,7 @@ export default function DashboardPage() {
                     </Card>
                 </FadeIn>
                 <FadeIn delay={0.2}>
-                    <Card>
+                    <Card className="transition-all hover:shadow-lg hover:-translate-y-1">
                         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                             <CardTitle className="text-sm font-medium">Total Expenses</CardTitle>
                             <TrendingDown className="h-4 w-4 text-red-500" />
@@ -62,7 +62,7 @@ export default function DashboardPage() {
                     </Card>
                 </FadeIn>
                 <FadeIn delay={0.3}>
-                    <Card>
+                    <Card className="transition-all hover:shadow-lg hover:-translate-y-1">
                         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                             <CardTitle className="text-sm font-medium">Net Balance</CardTitle>
                             <DollarSign className="h-4 w-4 text-muted-foreground" />
@@ -73,7 +73,7 @@ export default function DashboardPage() {
                     </Card>
                 </FadeIn>
                 <FadeIn delay={0.4}>
-                    <Card>
+                    <Card className="transition-all hover:shadow-lg hover:-translate-y-1">
                         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                             <CardTitle className="text-sm font-medium">Active Goals</CardTitle>
                             <Activity className="h-4 w-4 text-muted-foreground" />
