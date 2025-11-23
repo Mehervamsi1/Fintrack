@@ -47,9 +47,6 @@ export default function DashboardPage() {
                         </CardHeader>
                         <CardContent>
                             <div className="text-2xl font-bold">${summary.total_income.toFixed(2)}</div>
-                            <p className="text-xs text-muted-foreground">
-                                +20.1% from last month
-                            </p>
                         </CardContent>
                     </Card>
                 </FadeIn>
@@ -61,9 +58,6 @@ export default function DashboardPage() {
                         </CardHeader>
                         <CardContent>
                             <div className="text-2xl font-bold">${summary.total_expenses.toFixed(2)}</div>
-                            <p className="text-xs text-muted-foreground">
-                                +180.1% from last month
-                            </p>
                         </CardContent>
                     </Card>
                 </FadeIn>
@@ -75,9 +69,6 @@ export default function DashboardPage() {
                         </CardHeader>
                         <CardContent>
                             <div className="text-2xl font-bold">${summary.net_balance.toFixed(2)}</div>
-                            <p className="text-xs text-muted-foreground">
-                                +19% from last month
-                            </p>
                         </CardContent>
                     </Card>
                 </FadeIn>
@@ -88,10 +79,7 @@ export default function DashboardPage() {
                             <Activity className="h-4 w-4 text-muted-foreground" />
                         </CardHeader>
                         <CardContent>
-                            <div className="text-2xl font-bold">3</div>
-                            <p className="text-xs text-muted-foreground">
-                                +1 since last hour
-                            </p>
+                            <div className="text-2xl font-bold">{summary.active_goals_count}</div>
                         </CardContent>
                     </Card>
                 </FadeIn>

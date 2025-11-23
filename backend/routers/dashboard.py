@@ -37,10 +37,14 @@ def get_dashboard_summary(db: Session = Depends(database.get_db), current_user: 
         # For simplicity in this turn, I'll just return totals.
         pass
 
+    # Active Goals
+    active_goals_count = db.query(models.Goal).filter(models.Goal.owner_id == current_user.id).count()
+
     return {
         "total_income": total_income,
         "total_expenses": total_expenses,
         "net_balance": net_balance,
         "recent_expenses": recent_expenses,
-        "recent_income": recent_income
+        "recent_income": recent_income,
+        "active_goals_count": active_goals_count
     }

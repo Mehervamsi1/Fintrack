@@ -96,7 +96,7 @@ export default function ExpensesPage() {
                             <Plus className="mr-2 h-4 w-4" /> Add Expense
                         </Button>
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-[500px]">
+                    <DialogContent className="sm:max-w-[600px]">
                         <DialogHeader>
                             <DialogTitle>Add New Expense</DialogTitle>
                         </DialogHeader>
@@ -113,7 +113,7 @@ export default function ExpensesPage() {
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="item">Item</Label>
-                                <Input id="item" value={item} onChange={(e) => setItem(e.target.value)} required />
+                                <Input id="item" value={item} onChange={(e) => setItem(e.target.value)} placeholder="e.g. Coffee" required />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="category">Category</Label>
@@ -131,19 +131,23 @@ export default function ExpensesPage() {
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <Label htmlFor="paymentMethod">Payment Method</Label>
-                                    <Input id="paymentMethod" value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)} required />
+                                    <Input id="paymentMethod" value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)} placeholder="e.g. Cash, Card" required />
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="place">Place of Purchase</Label>
-                                    <Input id="place" value={placeOfPurchase} onChange={(e) => setPlaceOfPurchase(e.target.value)} required />
+                                    <Input id="place" value={placeOfPurchase} onChange={(e) => setPlaceOfPurchase(e.target.value)} placeholder="e.g. Starbucks" required />
                                 </div>
                             </div>
                             <div className="space-y-2">
+                                <Label htmlFor="receipt">Receipt Image (Optional)</Label>
+                                <Input id="receipt" type="file" accept="image/*" className="cursor-pointer" />
+                            </div>
+                            <div className="space-y-2">
                                 <Label htmlFor="notes">Notes</Label>
-                                <Input id="notes" value={notes} onChange={(e) => setNotes(e.target.value)} />
+                                <Input id="notes" value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Additional details..." />
                             </div>
                             <DialogFooter>
-                                <Button type="submit">Save Expense</Button>
+                                <Button type="submit" className="w-full sm:w-auto">Save Expense</Button>
                             </DialogFooter>
                         </form>
                     </DialogContent>

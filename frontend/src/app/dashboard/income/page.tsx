@@ -81,7 +81,7 @@ export default function IncomePage() {
                             <Plus className="mr-2 h-4 w-4" /> Add Income
                         </Button>
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-[500px]">
+                    <DialogContent className="sm:max-w-[600px]">
                         <DialogHeader>
                             <DialogTitle>Add New Income</DialogTitle>
                         </DialogHeader>
@@ -113,8 +113,12 @@ export default function IncomePage() {
                                     </SelectContent>
                                 </Select>
                             </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="proof">Proof of Income (Optional)</Label>
+                                <Input id="proof" type="file" accept="image/*,application/pdf" className="cursor-pointer" />
+                            </div>
                             <DialogFooter>
-                                <Button type="submit">Save Income</Button>
+                                <Button type="submit" className="w-full sm:w-auto">Save Income</Button>
                             </DialogFooter>
                         </form>
                     </DialogContent>

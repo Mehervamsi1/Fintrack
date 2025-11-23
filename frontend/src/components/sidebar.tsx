@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { LayoutDashboard, Wallet, TrendingUp, PiggyBank, LogOut, CreditCard } from "lucide-react"
+import { ModeToggle } from "@/components/mode-toggle"
 
 const sidebarItems = [
     { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
@@ -43,7 +44,11 @@ export function Sidebar() {
                     ))}
                 </nav>
             </div>
-            <div className="border-t p-4">
+            <div className="border-t p-4 space-y-2">
+                <div className="flex items-center justify-between px-2">
+                    <span className="text-sm font-medium">Theme</span>
+                    <ModeToggle />
+                </div>
                 <Button variant="ghost" className="w-full justify-start gap-3 text-muted-foreground" onClick={() => {
                     localStorage.removeItem("token")
                     window.location.href = "/login"
