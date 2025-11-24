@@ -1,9 +1,11 @@
-from fastapi import APIRouter, Depends
+
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from typing import List, Dict, Any
 from .. import models, database, auth_utils
 from datetime import datetime, timedelta
+from ..ai_service import AIService
 
 router = APIRouter(
     prefix="/dashboard",
@@ -48,3 +50,8 @@ def get_dashboard_summary(db: Session = Depends(database.get_db), current_user: 
         "recent_income": recent_income,
         "active_goals_count": active_goals_count
     }
+
+@router.get("/insights")
+def get_dashboard_insights(db: Session = Depends(database.get_db), current_user: models.User = Depends(auth_utils.get_current_user)):
+    ai_service = AIService(db, current_user.id)
+    return ai_service.generate_insights()
